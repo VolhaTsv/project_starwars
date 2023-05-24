@@ -1,0 +1,162 @@
+body {
+    background: linear-gradient(to top, black, #330466) no-repeat;
+    font-family: 'Vollkorn', serif;
+    min-height: 100vh;
+    color: beige;
+    padding: 0 10px;
+}
+body.light-theme {
+    background: white;
+    color: black;
+}
+
+.theme-button {
+    color: white;
+    height: 30px;
+    width: 20px;
+    box-shadow: 1px 1px 3px 5px #3949AB;
+}
+.light-theme-button {
+    background-color: white;
+    border: none;
+    border-radius: 50% 0 0 50%;
+}
+.dark-theme-button {
+    background-color: black;
+    border: none;
+    border-radius: 0 50% 50% 0;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.logo {
+    width: 100px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.light-theme .logo:hover {
+    filter: drop-shadow(2px 4px 6px black);
+}
+.logo:hover {
+    transform: rotate(360deg);
+    filter: invert()
+}
+.starwars-header-pic {
+    max-height: 150px;
+}
+.display-modes {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+}
+.sorting {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.selection-bar {
+    background-color: black;
+    color: beige;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+.light-theme .selection-bar {
+    background-color: white;
+    color: black;
+    border: solid 2px black;
+}
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.movie-item {
+    padding: 20px;
+    text-align: center;
+}
+.movie-item:hover {
+    background: #0f1630a2;
+    box-shadow: 1px 1px 5px 10px rgba(82, 69, 155, 0.603);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.movie-poster {
+    max-width: 400px;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+.movie-poster:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+.display-options {
+    display: flex;
+    gap: 10px;
+}
+.list-view {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-content: baseline;    
+}
+.list-view .movie-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.list-view .movie-poster {
+    width: 10%;
+}
+.list-view .movie-details {
+    display: contents;
+}
+.list-view-button {
+    background: url('../images/list.svg');
+}
+.grid-view-button {
+    background: url('../images/grid.svg');
+}
+.list-view-button,
+.grid-view-button {
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    border: none;
+    color: white;
+}
+button:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+/*EPISODE PAGE*/
+.episode-description {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.episode-poster {
+    width: 40%;
+    border-radius: 25px;
+    box-shadow: 1px 1px 5px 10px rgba(82, 69, 155, 0.603);
+}
+.episode-details {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.episode-details .episode-no {
+    font-weight: bold;
+    font-size: 20px;
+}
+.episode-details .episode-name {
+    font-weight: bold;
+    font-size: 30px;
+}
+.episode-details .episode-description {
+    line-height: 30px;
+    font-style: italic;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="header">
+        <img src="images/main-logo.svg" alt="Logo" title="Go to main page" class="logo" onclick ="window.location.href = 'index.html'">
+        <img src="images/starwars.png" alt="Starwars" class="starwars-header-pic">
+        <div>
+            <button onclick="changeTheme('light')" class="theme-button light-theme-button" title="light theme"></button>
+            <button onclick="changeTheme('dark')" class="theme-button dark-theme-button" title="dark theme"></button>
+        </div>
+    </div>
+    <div class="display-modes">
+        <div class="sorting">
+            <p>Sort by:</p>
+            <div class="sorting-options">
+                <select onchange="onSortingChange(this)" class="selection-bar">
+                    <option selected value="episode_number_asc">Episode number &uarr;</option>
+                    <option value="episode_number_desc">Episode number &darr;</option>
+                    <option value="episode_year_asc">Year &uarr;</option>
+                    <option value="episode_year_desc">Year &darr;</option>
+                </select>
+            </div>
+        </div>
+        <div class="display-options">
+            <button onclick="changeView('list')" class="list-view-button" title="list view"></button>
+            <button onclick="changeView('grid')" class="grid-view-button" title="grid theme"></button>
+        </div>
+    </div>
+    <div class="movies-container">
+       
+    </div>
+    <div class="characters"></div>
+
+<script src="./js/script.js"></script>
+</body>
+</html>
