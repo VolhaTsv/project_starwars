@@ -22,7 +22,6 @@ async function fetchMovies() {
   console.log(movies)
   return movies;
 }
-let sortingValue = '';
 
 const LOCALE_SORTING = 'sorting'
 const selectedSorting = localStorage.getItem(LOCALE_SORTING) || 'episode_number_asc';
@@ -30,23 +29,27 @@ renderMovies(selectedSorting)
 
 function onSortingChange(selectedObject) {
   sortingValue = selectedObject.value;
-  renderMovies(sortingValue)
+  console.log(selectedObject.value)
   localStorage.setItem(LOCALE_SORTING, sortingValue);
+  renderMovies(sortingValue)
 }
-console.log()
 
-async function renderMovies() {
+async function renderMovies(sortingValue) {
   const listOfMovies = await fetchMovies();
 
-  if (sortingValue === 'episode_number_asc' || sortingValue === '') {
-    listOfMovies.sort((a, b) => a.episode_id > b.episode_id ? 1 : -1);
-  } else if (sortingValue === 'episode_number_desc') {
-    listOfMovies.sort((a, b) => a.episode_id > b.episode_id ? -1 : 1);
-  }  else if (sortingValue === 'episode_year_asc') {
-    listOfMovies.sort((a, b) => a.release_date > b.release_date ? 1 : -1);
-  } else if (sortingValue === 'episode_year_desc') {
-    listOfMovies.sort((a, b) => a.release_date > b.release_date ? -1 : 1);
+  function sorting() {
+    if (sortingValue === 'episode_number_asc') {
+      listOfMovies.sort((a, b) => a.episode_id > b.episode_id ? 1 : -1);
+    } else if (sortingValue === 'episode_number_desc') {
+      listOfMovies.sort((a, b) => a.episode_id > b.episode_id ? -1 : 1);
+    }  else if (sortingValue === 'episode_year_asc') {
+      listOfMovies.sort((a, b) => a.release_date > b.release_date ? 1 : -1);
+    } else if (sortingValue === 'episode_year_desc') {
+      listOfMovies.sort((a, b) => a.release_date > b.release_date ? -1 : 1);
+    }
   }
+  sorting(sortingValue);
+
 
 moviesContainer.innerHTML = '';
 listOfMovies.forEach(element => {
