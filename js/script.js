@@ -54,10 +54,7 @@ listOfMovies.forEach(element => {
   movieItem.classList.add('movie-item');
   movieItem.innerHTML =
   `<a href="./episode.html?episode=${element.episode_id}" class="episode-link">
-        <div class="movie-poster-container">
-          <img src="images/episode${element.episode_id}.jpeg" alt="${element.title}" class="movie-poster">
-          // <button class="add-to-favorites-button" onclick="addToFavorites(${element.id})"></button>
-        </div>
+        <img src="images/episode${element.episode_id}.jpeg" alt="${element.title}" class="movie-poster">
         <div class="movie-details">
           <div class="movie-number">Episode ${element.episode_id}</div>
           <div class="movie-title">${element.title}</div>
