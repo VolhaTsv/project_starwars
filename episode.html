@@ -21,28 +21,9 @@
         </div>
     </div>
     <div class="main-content-container">
-        <div class="display-modes">
-            <div class="sorting">
-                <p>Sort by:</p>
-                <div class="sorting-options">
-                    <select onchange="onSortingChange(this)" class="selection-bar">
-                        <option selected value="episode_number_asc">Episode number &uarr;</option>
-                        <option value="episode_number_desc">Episode number &darr;</option>
-                        <option value="episode_year_asc">Year &uarr;</option>
-                        <option value="episode_year_desc">Year &darr;</option>
-                    </select>
-                </div>
-            </div>
-            <div class="display-options">
-                <button onclick="changeView('list')" class="list-view-button" title="list view"></button>
-                <button onclick="changeView('grid')" class="grid-view-button" title="grid theme"></button>
-            </div>
-        </div>
-        <div class="movies-container">
-           
-        </div>
+        <div class="content-container"></div>
     </div>
 <script src="./js/localstorage.js"></script>
-<script src="./js/script.js"></script>
+<script src="./js/episode.js"></script>
 </body>
 </html>

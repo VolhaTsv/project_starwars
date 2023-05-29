@@ -1,22 +1,11 @@
 const moviesContainer = document.querySelector('.movies-container'); 
 
-const LOCALE_THEME = 'theme'
-const storedLocalTheme = localStorage.getItem(LOCALE_THEME) || 'dark';
-changeTheme(storedLocalTheme);
-
-function changeTheme(theme) {
-  document.body.className = `${theme}-theme`;
-  localStorage.setItem(LOCALE_THEME, theme);
-}
-
 const LOCALE_VIEW = 'view'
 const selectedView = localStorage.getItem(LOCALE_VIEW) || 'grid';
-
 changeView(selectedView);
 
 function changeView(view) {
   localStorage.setItem(LOCALE_VIEW, view);
-  
   if (view === 'list') {
     moviesContainer.classList.remove('grid-view')
     moviesContainer.classList.add(`${view}-view`)
@@ -59,19 +48,24 @@ async function renderMovies() {
     listOfMovies.sort((a, b) => a.release_date > b.release_date ? -1 : 1);
   }
 
-  moviesContainer.innerHTML = '';
-  listOfMovies.forEach(element => {
-    const movieItem = document.createElement('div');
-    movieItem.classList.add('movie-item');
-    movieItem.innerHTML =
-    `
+moviesContainer.innerHTML = '';
+listOfMovies.forEach(element => {
+  const movieItem = document.createElement('div');
+  movieItem.classList.add('movie-item');
+  movieItem.innerHTML =
+  `<a href="./episode.html?episode=${element.episode_id}" class="episode-link">
+        <div class="movie-poster-container">
           <img src="images/episode${element.episode_id}.jpeg" alt="${element.title}" class="movie-poster">
-          <div class="movie-details">
-            <div class="movie-name">Episode ${element.episode_id} &mdash; ${element.title}</div>
-            <div class="movie-year">(${element.release_date.slice(0,4)})</div>
-          </div>
-    `
-    moviesContainer.append(movieItem);
-  })
-  }
+          // <button class="add-to-favorites-button" onclick="addToFavorites(${element.id})"></button>
+        </div>
+        <div class="movie-details">
+          <div class="movie-number">Episode ${element.episode_id}</div>
+          <div class="movie-title">${element.title}</div>
+          <div class="movie-year">Year: ${element.release_date.slice(0,4)}</div>
+        </div>
+  </a>
+  `
+  moviesContainer.append(movieItem);
+})
 
+}
