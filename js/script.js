@@ -28,7 +28,7 @@ const selectedSorting = localStorage.getItem(LOCALE_SORTING) || 'episode_number_
 renderMovies(selectedSorting)
 
 function onSortingChange(selectedObject) {
-  sortingValue = selectedObject.value;
+  let sortingValue = selectedObject.value;
   console.log(selectedObject.value)
   localStorage.setItem(LOCALE_SORTING, sortingValue);
   renderMovies(sortingValue)
