@@ -15,9 +15,15 @@
     <div class="header">
         <img src="images/main-logo.svg" alt="Logo" title="Go to main page" class="logo" onclick ="window.location.href = 'index.html'">
         <img src="images/starwars.png" alt="Starwars" class="starwars-header-pic">
-        <div>
-            <button onclick="changeTheme('light')" class="theme-button light-theme-button" title="light theme"></button>
-            <button onclick="changeTheme('dark')" class="theme-button dark-theme-button" title="dark theme"></button>
+        <div class="header-buttons">
+            <div>
+                <button onclick="changeLang('ru')" class="language-button"><img src="images/rus-flag.svg" alt="" class="language-button-image"></button>
+                <button onclick="changeLang('en')" class="language-button"><img src="images/eng-flag.svg" alt="" class="language-button-image"></button>
+            </div>
+            <div>
+                <button onclick="changeTheme('light')" class="theme-button light-theme-button" title="light theme"></button>
+                <button onclick="changeTheme('dark')" class="theme-button dark-theme-button" title="dark theme"></button>
+            </div>
         </div>
     </div>
     <div class="main-content-container">

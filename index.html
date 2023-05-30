@@ -15,15 +15,33 @@
     <div class="header">
         <img src="images/main-logo.svg" alt="Logo" title="Go to main page" class="logo" onclick ="window.location.href = 'index.html'">
         <img src="images/starwars.png" alt="Starwars" class="starwars-header-pic">
-        <div>
-            <button onclick="changeTheme('light')" class="theme-button light-theme-button" title="light theme"></button>
-            <button onclick="changeTheme('dark')" class="theme-button dark-theme-button" title="dark theme"></button>
+        <div class="header-buttons">
+            <div>
+                <button onclick="changeLang('ru')" class="language-button"><img src="images/rus-flag.svg" alt="" class="language-button-image"></button>
+                <button onclick="changeLang('en')" class="language-button"><img src="images/eng-flag.svg" alt="" class="language-button-image"></button>
+            </div>
+            <div>
+                <button onclick="changeTheme('light')" class="theme-button light-theme-button" title="light theme"></button>
+                <button onclick="changeTheme('dark')" class="theme-button dark-theme-button" title="dark theme"></button>
+            </div>
         </div>
+    </div>
+    <div class="next-episode-timer">
+        <div class="next-episode-name" data-lang-key="Star Wars: Rogue Squadron">Star Wars: Rogue Squadron</div>
+        <div class="next-episode-add-data" data-lang-key="Time to premiere">Time to premiere</div>
+        <div class="timer">
+            <div class="timer-items">
+              <div class="timer-item"><p class="timer-days">00</p><p class="timer-item-units" data-lang-key="days">days</p></div>
+              <div class="timer-item"><p class="timer-hours">00</p><p class="timer-item-units" data-lang-key="hours">hours</p></div>
+              <div class="timer-item"><p class="timer-minutes">00</p><p class="timer-item-units" data-lang-key="minutes">minutes</p></div>
+              <div class="timer-item"><p class="timer-seconds">00</p><p class="timer-item-units" data-lang-key="seconds">seconds</p></div>
+            </div>
+          </div>
     </div>
     <div class="main-content-container">
         <div class="display-modes">
             <div class="sorting">
-                <p>Sort by:</p>
+                <p data-lang-key="Sort by">Sort by:</p>
                 <div class="sorting-options">
                     <select onchange="onSortingChange(this)" class="selection-bar">
                         <option selected value="episode_number_asc">Episode number &uarr;</option>

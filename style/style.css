@@ -47,6 +47,19 @@ body.light-theme {
 .starwars-header-pic {
     max-height: 150px;
 }
+.header-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.language-button-image {
+    height: 20px;
+    width: 30px;
+}
+.language-button {
+    background: none;
+    border: none;
+}
 
 /*MAIN PAGE*/
 .display-modes {
@@ -71,6 +84,7 @@ body.light-theme {
     color: black;
     border: solid 2px black;
 }
+
 .main-content-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -159,6 +173,27 @@ button:hover {
     opacity: 0.5;
 }
 
+.next-episode-timer {
+    text-align: center;
+    padding: 20px;
+}
+.next-episode-name,
+.timer-items {
+    font-size: 40px;
+}
+.next-episode-add-data {
+    font-size: 25px;
+    padding: 20px 0;
+}
+.timer .timer-item-units {
+    font-size: 20px;
+}
+.timer-items {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
 /*EPISODE PAGE*/
 
 .characters-heading {
@@ -178,7 +213,7 @@ button:hover {
     align-items: center;
 }
 .episode-poster {
-    max-height: 400px;
+    max-width: 400px;
     border-radius: 25px;
 }
 .episode-details {
@@ -368,3 +403,17 @@ button:hover {
     height: 100px;
   }
   
+  @media only all and (max-width: 768px) {
+    .starwars-header-pic {
+        display: none;
+    }
+    .timer-items {
+        gap: 20px;
+    }
+    .movie-poster {
+        width: 300px;
+    }
+    .episode-container {
+        flex-direction: column;
+    }
+  }

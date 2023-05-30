@@ -69,3 +69,29 @@ listOfMovies.forEach(element => {
 })
 
 }
+
+
+let timerId;
+function timeToPremiere() {
+  const nextEpisodeDate = new Date(2023, 11, 20);
+
+  const diff = nextEpisodeDate - new Date();
+  if (diff <= 0) {
+    clearInterval(timerId);
+  }
+  const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
+  const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+  const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+  const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+
+  _days.textContent = days;
+  _hours.textContent = hours;
+  _minutes.textContent = minutes;
+  _seconds.textContent = seconds;
+}
+  const _days = document.querySelector('.timer-days');
+  const _hours = document.querySelector('.timer-hours');
+  const _minutes = document.querySelector('.timer-minutes');
+  const _seconds = document.querySelector('.timer-seconds');
+  timeToPremiere();
+timerId = setInterval(timeToPremiere, 1000);
