@@ -55,8 +55,9 @@ moviesContainer.innerHTML = '';
 listOfMovies.forEach(element => {
   const movieItem = document.createElement('div');
   movieItem.classList.add('movie-item');
-  movieItem.innerHTML =
-  `<a href="./episode.html?episode=${element.episode_id}" class="episode-link">
+  movieItem.innerHTML = `
+  <button onclick="addToFavorites(${element.episode_id})" class="favorites-button" id="favorites-button${element.episode_id}"></button>
+  <a href="./episode.html?episode=${element.episode_id}" class="episode-link">
         <img src="images/episode${element.episode_id}.jpeg" alt="${element.title}" class="movie-poster">
         <div class="movie-details">
           <div class="movie-number">Episode ${element.episode_id}</div>
@@ -67,7 +68,7 @@ listOfMovies.forEach(element => {
   `
   moviesContainer.append(movieItem);
 })
-
+selectedFavoriteButton()
 }
 
 
@@ -95,3 +96,41 @@ function timeToPremiere() {
   const _seconds = document.querySelector('.timer-seconds');
   timeToPremiere();
 timerId = setInterval(timeToPremiere, 1000);
+
+
+const LOCALE_FAVORITES = 'favorites';
+const storedFavoriteEpisode = JSON.parse(localStorage.getItem(LOCALE_FAVORITES)) || [];
+listOfFavorites(storedFavoriteEpisode);
+
+function listOfFavorites(favorites) {
+    localStorage.setItem(LOCALE_FAVORITES, JSON.stringify(favorites));
+}
+
+function addToFavorites(id) {
+  let favButton = document.querySelector(`#favorites-button${id}`);
+  let favorites = JSON.parse(localStorage.getItem("favorites"));
+  console.log(favButton)
+  console.log(favorites)
+  if(favorites.includes(id)) {
+    console.log(id)
+    let reducedFav = favorites.filter((favorite) => favorite !== id);
+    console.log(favorites)
+    localStorage.setItem(LOCALE_FAVORITES, JSON.stringify(reducedFav));
+    favButton.classList.remove('selected-favorite')
+  } else {
+    favorites.push(id)
+    localStorage.setItem(LOCALE_FAVORITES, JSON.stringify(favorites));
+    favButton.classList.add('selected-favorite')
+  }
+ 
+}
+
+function selectedFavoriteButton() {
+  let favorites = JSON.parse(localStorage.getItem("favorites"));
+
+  for(let favorite of favorites) {
+    let favButton = document.querySelector(`#favorites-button${favorite}`);
+    favButton.classList.add('selected-favorite')
+  }
+}
+

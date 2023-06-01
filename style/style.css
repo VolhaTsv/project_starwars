@@ -95,6 +95,24 @@ body.light-theme {
     justify-content: center;
     gap: 20px;
 }
+.favorites-button {
+    background: url('../images/favourite.svg') no-repeat;
+    background-size: contain;
+
+    border: none;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    
+    height: 50px;
+    width: 50px;
+}
+.favorites-button:hover,
+.selected-favorite {
+    background: url('../images/selected-favourite.svg') no-repeat;
+    background-size: contain;
+}
+
 a.episode-link:active,
 a.episode-link:hover,
 a.episode-link,
@@ -106,6 +124,7 @@ a.character-link {
 }
 .movie-item {
     padding: 20px;
+    position: relative;
 }
 .movie-item:hover {
     background: #0f1630a2;
@@ -115,6 +134,7 @@ a.character-link {
 .movie-details {
     white-space: pre-line;
 }
+
 
 .light-theme .episode-link {
     color: black;
@@ -127,7 +147,7 @@ a.character-link {
 }
 .movie-poster {
     max-width: 400px;
-    min-width: 250px;
+    min-width: 200px;
     border-radius: 10px;
     padding-bottom: 10px;
 }
@@ -142,11 +162,9 @@ a.character-link {
 .list-view {
     justify-content: flex-start;
     flex-direction: column;
-    align-content: baseline;    
 }
 .list-view .episode-link {
     display: flex;
-    width: 90vw;
     align-items: center;
     gap: 30px;
 }
