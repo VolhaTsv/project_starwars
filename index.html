@@ -44,10 +44,10 @@
                 <p data-lang-key="Sort by">Sort by:</p>
                 <div class="sorting-options">
                     <select onchange="onSortingChange(this)" class="selection-bar">
-                        <option selected value="episode_number_asc">Episode number &uarr;</option>
-                        <option value="episode_number_desc">Episode number &darr;</option>
-                        <option value="episode_year_asc">Year &uarr;</option>
-                        <option value="episode_year_desc">Year &darr;</option>
+                        <option value="episode_number_asc" data-lang-key="Episode (from earliest)">Episode (from earliest)</option>
+                        <option value="episode_number_desc" data-lang-key="Episode (from latest)">Episode (from latest)</option>
+                        <option value="episode_year_asc" data-lang-key="Year (from earliest)">Year (from earliest)</option>
+                        <option value="episode_year_desc" data-lang-key="Year (from latest)">Year (from latest)</option>
                     </select>
                 </div>
             </div>
@@ -60,6 +60,8 @@
            
         </div>
     </div>
+<script src="./js/dict-en.js"></script>
+<script src="./js/dict-ru.js"></script>
 <script src="./js/localstorage.js"></script>
 <script src="./js/script.js"></script>
 </body>

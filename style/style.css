@@ -23,7 +23,7 @@ body.light-theme {
 }
 .dark-theme-button {
     background-color: black;
-    border: none;
+    border: solid 1px black;
     border-radius: 0 50% 50% 0;
 }
 .header {
@@ -64,7 +64,8 @@ body.light-theme {
 /*MAIN PAGE*/
 .display-modes {
     display: flex;
-    padding: 10px 20px;
+    flex-wrap: wrap;
+    padding: 10px 5px;
     justify-content: space-between;
 }
 .sorting {
@@ -107,7 +108,6 @@ body.light-theme {
     height: 50px;
     width: 50px;
 }
-.favorites-button:hover,
 .selected-favorite {
     background: url('../images/selected-favourite.svg') no-repeat;
     background-size: contain;
@@ -134,7 +134,10 @@ a.character-link {
 .movie-details {
     white-space: pre-line;
 }
-
+.movie-number,
+.movie-year {
+    font-size: 14px;
+}
 
 .light-theme .episode-link {
     color: black;
@@ -378,9 +381,21 @@ button:hover {
   .character-info {
     line-height: 30px;
   }
-  
+  .character-info span{
+    color: #ffff4c;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  .light-theme .character-info span {
+    color: black;
+  }
   .character-homeworld span{
     text-transform: capitalize;
+  }
+  .character-appearance {
+    margin-top: 15px;
+    text-decoration: underline;
+    font-size: 20px;
   }
   .character-filmography {
     text-align: center;
@@ -434,4 +449,15 @@ button:hover {
     .episode-container {
         flex-direction: column;
     }
+    .movie-item:hover {
+        background: none;
+    }
+    .character-container {
+        flex-flow: column;
+        align-items: center;
+    }
+    .logo:hover {
+        transform: none;
+    }
   }
+ 

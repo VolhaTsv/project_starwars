@@ -7,33 +7,6 @@ function changeTheme(theme) {
   localStorage.setItem(LOCALE_THEME, theme);
 }
 
-
-const RU = {
-  'days': 'дней',
-  'hours': 'часов',
-  'minutes': 'минут',
-  'seconds': 'секунд',
-  'Sort by': 'Сортировать по',
-  'Time to premiere': 'До премьеры осталось',
-  'Star Wars: Rogue Squadron': 'Звёздные войны: Эскадрилья «Изгой»',
-  'Episodes:': 'Эпизоды:',
-  // 'Episode number': 'Номеру эпизода',
-  // 'Year': 'Году выхода',
-};
-const EN = {
-  'days': 'days',
-  'hours': 'hours',
-  'minutes': 'minutes',
-  'seconds': 'seconds',
-  'Sort by': 'Sort by',
-  'Time to premiere': 'Time to premiere',
-  'Star Wars: Rogue Squadron': 'Star Wars: Rogue Squadron',
-  'Episodes:': 'Episodes:',
-  // 'Episode number': 'Episode number',
-  // 'Year': 'Year',
-
-};
-
 const DICTIONARIES = {
   'ru': RU,
   'en': EN,

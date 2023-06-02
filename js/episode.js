@@ -35,7 +35,7 @@ contentContainer.innerHTML = `
         <div class="episode-description">${episode.opening_crawl}</div>
     </div>
 </div>
-<h2 class="characters-heading">Characters</h2>
+<h2 class="characters-heading" data-lang-key="Characters">Characters</h2>
 <div class="characters"></div>
 `
 await listOfCharacters(0, 10)

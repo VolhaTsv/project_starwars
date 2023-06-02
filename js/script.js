@@ -109,12 +109,9 @@ function listOfFavorites(favorites) {
 function addToFavorites(id) {
   let favButton = document.querySelector(`#favorites-button${id}`);
   let favorites = JSON.parse(localStorage.getItem("favorites"));
-  console.log(favButton)
-  console.log(favorites)
   if(favorites.includes(id)) {
     console.log(id)
     let reducedFav = favorites.filter((favorite) => favorite !== id);
-    console.log(favorites)
     localStorage.setItem(LOCALE_FAVORITES, JSON.stringify(reducedFav));
     favButton.classList.remove('selected-favorite')
   } else {

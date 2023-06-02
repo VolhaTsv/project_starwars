@@ -27,12 +27,17 @@ async function renderCharacter() {
         <div class="character-container">
             <img src="${characterData.image}" alt="${characterData.name}" class="character-image">
             <div class="character-info">
-                <h2 class="character-name">${characterData.name}</h4>
-                <div>Date of birth: ${characterData.birth_year}</div>
-                <div>Species: ${characterData.species}</div>
-                <div>Gender: ${characterData.gender}</div>
+                <h2 class="character-name">${characterData.name}</h2>
+                <div>Date of birth: <span>${characterData.birth_year}</span></div>
+                <div>Species: <span>${characterData.species}</span></div>
+                <div>Gender: <span>${characterData.gender}</span></div>
                 <div class="character-homeworld">Homeworld: <span>${characterData.homeworld}</span></div>
-                </div>
+                <div class="character-appearance" data-lang-key="Appearance">Appearance</div>
+                <div>Eye color: <span>${characterData.eye_color}</span></div>
+                <div>Hair color: <span>${characterData.hair_color}</span></div>
+                <div>Skin color: <span>${characterData.skin_color}</span></div>
+                <div>Height: <span>${characterData.height}</span></div>
+                <div>Weight: <span>${characterData.mass}</span></div>
             </div>
         </div>
     `
