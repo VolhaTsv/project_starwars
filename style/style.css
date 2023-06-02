@@ -204,7 +204,7 @@ button:hover {
 
 .next-episode-timer {
     text-align: center;
-    padding: 20px;
+    padding: 5px;
 }
 .next-episode-name,
 .timer-items {
@@ -223,17 +223,27 @@ button:hover {
     gap: 50px;
 }
 .favorites-sorting-buttons {
-    padding: 20px 0;
-    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
 .show-favorites-button,
 .show-all-button {
-    width: 150px;
-    background-color: #330466;
+    width: 160px;
+    background-color: #000000;
     color: beige;
     border-radius: 20px;
     border: none;
     padding: 10px;
+    box-shadow: 0 0 2px 3px #ffff0080;
+}
+.light-theme .show-favorites-button,
+.light-theme .show-all-button {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 2px 1px black;
+
 }
 
 /*EPISODE PAGE*/
@@ -459,6 +469,9 @@ button:hover {
   }
   
   @media only all and (max-width: 768px) {
+    .header {
+        padding: 0;
+    }
     .starwars-header-pic {
         display: none;
     }
