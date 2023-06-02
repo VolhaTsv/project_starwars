@@ -214,6 +214,23 @@ button:hover {
     justify-content: center;
     gap: 50px;
 }
+.favorites-sorting-buttons {
+    padding: 20px 0;
+    text-align: center;
+}
+.show-favorites-button,
+.show-all-button {
+    width: 150px;
+    background-color: #330466;
+    color: beige;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+}
+
+
+
+
 
 /*EPISODE PAGE*/
 

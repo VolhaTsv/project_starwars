@@ -1,6 +1,5 @@
 const contentContainer = document.querySelector('.content-container')
 let episodeArrayKey = +(location.search.split('=').pop());
-console.log(episodeArrayKey)
 
 async function getEpisodeID() {
     const response = await fetch(
@@ -62,10 +61,7 @@ async function listOfCharacters() {
     const episodeId = await getEpisodeID();
     const people = await fetchPeople();
     const episode = await fetchEpisode(episodeId);
-
-
     const peopleId = episode.characters;
-    console.log(peopleId)
     const charactersContainer = document.querySelector('.characters');
 
     spinner()
@@ -74,7 +70,6 @@ async function listOfCharacters() {
         const charactersList = document.createElement('div');
         charactersList.classList.add('character-item');
 
-        console.log(people[peopleId[i]]);
         charactersList.innerHTML = `
         <a href="./character.html?character=${peopleId[i]}" class="character-link">
         <img src="${people[peopleId[i]].image}" alt="${people[peopleId[i]].name}" class="character-image">

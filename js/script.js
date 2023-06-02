@@ -19,7 +19,6 @@ async function fetchMovies() {
     `https://desfarik.github.io/star-wars/api/film/all.json`
   );
   let movies = await response.json();
-  console.log(movies)
   return movies;
 }
 
@@ -29,13 +28,12 @@ renderMovies(selectedSorting)
 
 function onSortingChange(selectedObject) {
   let sortingValue = selectedObject.value;
-  console.log(selectedObject.value)
   localStorage.setItem(LOCALE_SORTING, sortingValue);
   renderMovies(sortingValue)
 }
 
 async function renderMovies(sortingValue) {
-  const listOfMovies = await fetchMovies();
+  let listOfMovies = await fetchMovies();
 
   function sorting() {
     if (sortingValue === 'episode_number_asc') {
@@ -46,6 +44,17 @@ async function renderMovies(sortingValue) {
       listOfMovies.sort((a, b) => a.release_date > b.release_date ? 1 : -1);
     } else if (sortingValue === 'episode_year_desc') {
       listOfMovies.sort((a, b) => a.release_date > b.release_date ? -1 : 1);
+    } else if (sortingValue === 'favorites') {
+      let favorites = JSON.parse(localStorage.getItem("favorites"));
+      let favoriteList = [];
+      for(let movie in listOfMovies) {
+        for(let favorite of favorites) {
+          if(listOfMovies[movie].episode_id === favorite) {
+            favoriteList.push(listOfMovies[movie]);
+          }
+        }
+      }
+      listOfMovies = favoriteList;
     }
   }
   sorting(sortingValue);
@@ -110,7 +119,6 @@ function addToFavorites(id) {
   let favButton = document.querySelector(`#favorites-button${id}`);
   let favorites = JSON.parse(localStorage.getItem("favorites"));
   if(favorites.includes(id)) {
-    console.log(id)
     let reducedFav = favorites.filter((favorite) => favorite !== id);
     localStorage.setItem(LOCALE_FAVORITES, JSON.stringify(reducedFav));
     favButton.classList.remove('selected-favorite')
@@ -131,3 +139,9 @@ function selectedFavoriteButton() {
   }
 }
 
+function showFavorites() {
+  renderMovies('favorites');
+}
+function showAll() {
+  renderMovies(localStorage.getItem(LOCALE_SORTING));
+}

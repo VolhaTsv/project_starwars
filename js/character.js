@@ -1,13 +1,11 @@
 const contentContainer = document.querySelector('.content-container')
 let characterArrayKey = +(location.search.split('=').pop());
-console.log(characterArrayKey)
 
 async function getCharacterData() {
     const response = await fetch(
         `https://desfarik.github.io/star-wars/api/people/${characterArrayKey + 1}.json`
       );
     let character = await response.json();
-    console.log(character);
     return character;
 }
 
@@ -22,7 +20,7 @@ fetchMovies()
 
 async function renderCharacter() {
     let characterData = await getCharacterData();
-    console.log(characterData)
+
     contentContainer.innerHTML = `
         <div class="character-container">
             <img src="${characterData.image}" alt="${characterData.name}" class="character-image">
@@ -47,14 +45,12 @@ renderCharacter()
 
 async function characterMovies() {
     let movies = await fetchMovies();
-    console.log(movies)
     let listOfMovies = [];
     for(let i = 0; i< movies.length; i++) {
         if(movies[i].characters.includes(characterArrayKey.toString())) {
             listOfMovies.push(i)
         }
     }
-    console.log(listOfMovies)
     return listOfMovies;
     
 }
@@ -73,7 +69,6 @@ async function generateMovies() {
             <p>${movies[element].title}</p>
         </a>
     `
-    console.log(movies[element].title)
     moviesContainer.append(episodeItem)
     })
     
