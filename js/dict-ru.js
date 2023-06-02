@@ -9,8 +9,8 @@ const RU = {
     'Episodes:': 'Эпизоды:',
     'Episode (from earliest)':`С первого эпизода`,
     'Episode (from latest)':`С последнего эпизода`,
-    'Year (from earliest)': 'От новых к старым',
-    'Year (from latest)': 'От старых к новым',
+    'Year (from earliest)': 'От старых к новым',
+    'Year (from latest)': 'От новых к старым',
     'Appearance': 'Внешнее описание',
     'Characters': 'Персонажи',
   };
