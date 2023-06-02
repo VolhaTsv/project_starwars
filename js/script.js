@@ -140,7 +140,12 @@ function selectedFavoriteButton() {
 }
 
 function showFavorites() {
-  renderMovies('favorites');
+  let favorites = JSON.parse(localStorage.getItem("favorites"));
+  if(favorites.length === 0) {
+    alert('No favorite episodes!')
+  } else {
+    renderMovies('favorites');
+  }
 }
 function showAll() {
   renderMovies(localStorage.getItem(LOCALE_SORTING));
